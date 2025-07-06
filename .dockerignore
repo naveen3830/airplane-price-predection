@@ -1,0 +1,14 @@
+Data/
+*.ipynb
+*.csv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+/air_price
