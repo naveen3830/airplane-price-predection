@@ -9,9 +9,12 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
+# Copy installed packages from builder layer
 COPY --from=builder /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
-COPY main.py ./
-COPY random_forest_model.pkl ./
 
+# Copy app source code
+COPY main.py ./
+
+# Start FastAPI with Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
